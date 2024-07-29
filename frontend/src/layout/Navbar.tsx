@@ -17,11 +17,13 @@ const Navbar = () => {
           <div className="flex items-center justify-between w-full">
             <div className="font-bold text-2xl cursor-pointer text-gray-800 flex items-center font-[poppins]">
               <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
-              <img
-                src="../../public/assets/bannerimage/inerstech.png"
-                alt=""
-                className=" h-16"
-              />
+              <Link to="/">
+                <img
+                  src="../../public/assets/bannerimage/inerstech.png"
+                  alt=""
+                  className=" h-16"
+                />
+              </Link>
             </div>
             <div className="md:hidden flex items-center gap-6 ">
               <i className="py-2 px-2 rounded md:hidden flex relative">
@@ -43,19 +45,19 @@ const Navbar = () => {
                 <li className="text-xl">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="text-xl">
+                {/* <li className="text-xl">
                   {" "}
                   <Link to="/about">About</Link>
-                </li>
+                </li> */}
                 <li className="text-xl">
                   <Link to="/all-products">Products</Link>
                 </li>
-                <li className="text-xl">
+                {/* <li className="text-xl">
                   <Link to="/blog">Blog</Link>
-                </li>
-                <li className="text-xl">
+                </li> */}
+                {/* <li className="text-xl">
                   <Link to="/contact">Contact</Link>
-                </li>
+                </li> */}
 
                 <i className="py-2 px-2 rounded flex relative">
                   <Link to="/cart">
