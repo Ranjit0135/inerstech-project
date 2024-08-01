@@ -1,21 +1,23 @@
-import express from 'express';
+import express from 'express'
+import userRoutes from './routes/user.routes.js'
+import { connectDatabase } from './utils/features.js';
+import { errorMiddleware } from './middlewares/error.js';
 
-//  importing routes
-import userRoutes from './routes/user.route.js'
-import { connectDatabase } from './types/types.js';
-
-const port = 3000
+const  port = 3000;
 
 connectDatabase();
+const app = express()
 
-const app = express();
+app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
     res.send("Api working")
 })
 
 app.use("/api/v1/user",userRoutes)
 
-app.listen(port,()=>{
-    console.log("server listening on port")
+app.use(errorMiddleware)
+
+app.listen(port, ()=>{
+console.log(" my server is running on porty " + port)
 });
